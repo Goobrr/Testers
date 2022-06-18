@@ -1,23 +1,15 @@
-#the mod name as displayed in-game
-displayName: "Java Mod Template"
+displayName: "Testers"
 
-#the internal name of your mod
-name: "example-java-mod"
+name: "testers"
 
-#your name
-author: "You"
+author: "Goobrr & sk7725"
 
-#the fully qualified main class of the mod
-main: "example.ExampleJavaMod"
+main: "testers.Testers"
 
-#the mod description as seen in the mod dialog
-description: "A Mindustry Java mod template."
+description: "V7 Java port of sk7725/Testers"
 
-#the mod version
-version: 1.0
+version: 0
 
-#the minimum game build required to run this mod
-minGameVersion: 129
+minGameVersion: 136
 
-#this is a java mod
 java: true
