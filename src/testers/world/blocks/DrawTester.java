@@ -18,8 +18,12 @@ public class DrawTester extends BaseTester{
         @Override
         public void draw(){
             super.draw();
-            if(cons != null){
-                cons.get(this);
+            try{
+                if(cons != null){
+                    cons.get(this);
+                }
+            }catch(Exception e){
+                error(e);
             }
         }
 
