@@ -11,6 +11,7 @@ import mindustry.mod.*;
 import mindustry.world.*;
 import rhino.*;
 import testers.*;
+import testers.ui.*;
 
 import static testers.TestersVars.*;
 
@@ -36,6 +37,8 @@ public class BaseTester extends Block{
         public String content = "";
         public Cons<Building> cons;
         public boolean changed = true;
+
+        LogsTable log;
 
         @Override
         public void buildConfiguration(Table table){
@@ -75,7 +78,11 @@ public class BaseTester extends Block{
 
         public void error(Exception e){
             Sounds.unlock.play();
-            Vars.ui.showLabel("[scarlet]Error:[] " + e.getMessage(), 4, x, y + 8);
+            if(log != null){
+                log = log.addLog(new LogsTable("[scarlet]Error:[] " + e.getMessage(), 4, 0.5f, x, y + 8));
+            }else{
+                log = new LogsTable("[scarlet]Error:[] " + e.getMessage(), 4, 0.5f, x, y + 8);
+            }
         };
 
         public void edit(){
