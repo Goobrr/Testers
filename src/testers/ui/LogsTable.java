@@ -14,6 +14,7 @@ import mindustry.ui.*;
 
 public class LogsTable extends Table{
     public float wx, wy, ox, oy, lx, ly;
+    private static final int maxDepth = 40;
 
     public LogsTable(String text, float duration, float fadetime, float worldx, float worldy){
         wx = worldx;
@@ -54,12 +55,13 @@ public class LogsTable extends Table{
 
     public LogsTable addLog(LogsTable t){
         t.parent = this;
-        moveUp();
+        moveUp(0);
         return t;
     }
 
-    public void moveUp(){
+    public void moveUp(int depth){
         actions(Actions.parallel(Actions.moveBy(0, getHeight(), 0.1f, Interp.pow3Out)));
-        if(parent instanceof LogsTable l) l.moveUp();
+        if(parent instanceof LogsTable l) l.moveUp(depth + 1);
+        if(depth > maxDepth) remove();
     }
 }
