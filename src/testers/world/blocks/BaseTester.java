@@ -43,8 +43,8 @@ public class BaseTester extends Block{
         @Override
         public void buildConfiguration(Table table){
             table.table(t -> {
-                t.button(Icon.pencil, this::edit).size(80);
-                t.button(Icon.play, this::run).size(80);
+                t.button(Icon.pencil, this::edit).size(50);
+                t.button(Icon.play, this::run).size(50);
             }).grow();
         }
 

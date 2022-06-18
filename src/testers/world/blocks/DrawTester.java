@@ -35,8 +35,8 @@ public class DrawTester extends BaseTester{
 
         public void buildConfiguration(Table table){
             table.table(t -> {
-                t.button(Icon.pencil, this::edit).size(80);
-                t.button(Icon.cancel, () -> cons = null).size(80);
+                t.button(Icon.pencil, this::edit).size(50);
+                t.button(Icon.cancel, () -> cons = null).size(50);
             }).grow();
         }
     }
