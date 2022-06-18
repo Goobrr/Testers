@@ -12,10 +12,13 @@ public class EditDialog extends BaseDialog{
 
     public TesterBuild build;
 
+    public int lineCount;
+
     public EditDialog(){
         super(Core.bundle.get("testers.edit"));
 
         area = cont.add(new TextArea(content.replace("/\r/g", "\n"))).size(1000, Core.graphics.getHeight() - 120).get();
+        area.setStyle(TestersStyles.codeField);
 
         area.setMaxLength(1000); // packet sizes go brrrrr
 

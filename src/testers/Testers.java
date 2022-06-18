@@ -12,6 +12,10 @@ import testers.world.blocks.*;
 
 public class Testers extends Mod{
     public Testers(){
+        Events.on(FileTreeInitEvent.class, e -> {
+            TestersStyles.init();
+        });
+
         Events.on(ClientLoadEvent.class, e -> {
             TestersVars.edit = new EditDialog();
             TestersVars.scripts = Vars.mods.getScripts();
