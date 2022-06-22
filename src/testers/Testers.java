@@ -20,7 +20,7 @@ public class Testers extends Mod{
             TestersVars.edit = new EditDialog();
             TestersVars.scripts = Vars.mods.getScripts();
 
-            Log.info("Testers Vars Initialized");
+            Log.info("Testers Vars Initialized");//test
         });
     }
 
